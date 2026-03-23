@@ -1,0 +1,97 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = {
+  company: [
+    { name: 'About Us', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms of Service', href: '/terms' },
+  ],
+  categories: [
+    { name: 'Kitchenware', href: '/products/kitchenware' },
+    { name: 'Cleaning Supplies', href: '/products/cleaning' },
+    { name: 'Storage Solutions', href: '/products/storage' },
+    { name: 'Home Decor', href: '/products/decor' },
+  ]
+};
+---
+
+<footer class="bg-slate-900 text-slate-300 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      
+      <!-- Company Branding & Description -->
+      <div class="col-span-1 md:col-span-2 lg:col-span-1">
+        <a href="/" class="text-white text-xl font-bold tracking-tight">
+          HEATH COURT LTD
+        </a>
+        <p class="mt-4 text-sm leading-relaxed text-slate-400">
+          Leading wholesale distributor of high-quality household goods. 
+          Supplying retailers across the UK with reliable service and competitive bulk pricing.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Company</h3>
+        <ul class="space-y-2 text-sm">
+          {footerLinks.company.map(link => (
+            <li>
+              <a href={link.href} class="hover:text-blue-400 transition-colors">{link.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Product Categories (SEO Boost) -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Categories</h3>
+        <ul class="space-y-2 text-sm">
+          {footerLinks.categories.map(link => (
+            <li>
+              <a href={link.href} class="hover:text-blue-400 transition-colors">{link.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact & Address -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Head Office</h3>
+        <ul class="space-y-4 text-sm">
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span>
+              Unit A 82 James Carter Road,<br />
+              Mildenhall, Bury St. Edmunds,<br />
+              England, IP28 7DE
+            </span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <a href="mailto:info@heathcourt.co.uk" class="hover:text-blue-400">info@heathcourt.co.uk</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-slate-800 pt-8 mt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 space-y-4 md:space-y-0">
+        <p>&copy; {currentYear} Heath Court Ltd. All rights reserved.</p>
+        <div class="flex space-x-6">
+          <span>Company No: [Insert Number]</span>
+          <span>VAT: [Insert VAT Number]</span>
+          <a href="https://goo.gl/maps/placeholder" target="_blank" class="text-blue-500 hover:underline">View on Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
